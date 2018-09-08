@@ -1,1 +1,81 @@
-Ejemplo de examen 
+--Felix Garcia Luis Alfonso   15211291
+--EXAMEN TEORICO 1
+--programacion web [16:00-17:00]
+
+1.- Dibuje un arbol con la estructura basica de un proyecto y una aplicación de Django
+
+//Estructura basica de un proyecto de Django
+	ejemploexamen
+	├── ejemploexamen
+	│   ├── __init__.py
+	│   ├── settings.py
+	│   ├── urls.py
+	│   └── wsgi.py
+	└── manage.py
+
+//Estructura basica de una aplicacion de Django
+	nombreapp
+	├── admin.py
+	├── apps.py
+	├── __init__.py
+	├── migrations
+	│   └── __init__.py
+	├── models.py
+	├── tests.py
+	└── views.py
+
+
+2.- Mencione tres argumentos que gestiona el comando manage.py
+>Makemigrations
+>Migrate
+>Runserver
+
+
+3.- Explique la diferencia de utilizar urls global y urls local
+urls global se encuentra al inicio de la pagina, directamente en el localhost:8000/. 
+urls local se encuentra en las aplicaciones, gestiona las url de la aplicacion generalmente se usan para entrar a vistas, 
+dentro de urls global se incluye una url especial para la aplicacion la cual se importara en la url local para que despues 
+de esta entre todo lo que este en urls local
+
+
+4.- Escriba un patron de url para una vista basada en funcion
+from django.urls import path
+from tweets import views
+
+urlpatterns = [
+	path('NombreDireccion', views.NombreFuncion, name="NombreURL"),
+]
+
+
+5.- Escriba un patron de url para una vista basada en clase
+from django.urls import path
+
+from tweets import views
+
+urlpatterns = [
+	path('NombreDireccion', views.NombreClase.as_view(), name="NombreURL"),
+]
+
+
+6.- Escriba el comando para hacer un proyecto en Django
+//Activar el entorno virtual y tener instalado django
+django-admin.py startproject NombreProjecto
+
+
+7.- Escriba el comando para hacer una aplicación en Django
+//Activar el entorno virtual y tener instalado django
+django-admin.py startapp NombreApicacion
+
+
+8.- Mencione para que sirve el archivo Settings.py
+Sirve para las configuraciones del proyecto, para agregar o para quitar configuraciones.
+
+
+9.- Escriba el comando para registrar las migraciones de los modelos
+	python3 manage.py makemigrations
+Escanea los modelos actuales y los compara con los anteriores para obtener los cambios realizados
+
+
+10.- Escriba el comando para sincronizar el modelo con el motor de base de datos.
+	python3 manage.py migrate
+Aplica las migraciones previamente registradas al modelo de la base de datos 
