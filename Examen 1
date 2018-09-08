@@ -40,7 +40,7 @@ de esta entre todo lo que este en urls local
 
 4.- Escriba un patron de url para una vista basada en funcion
 from django.urls import path
-from tweets import views
+from NombreAplicacion import views
 
 urlpatterns = [
 	path('NombreDireccion', views.NombreFuncion, name="NombreURL"),
@@ -50,7 +50,7 @@ urlpatterns = [
 5.- Escriba un patron de url para una vista basada en clase
 from django.urls import path
 
-from tweets import views
+from NombreAplicacion import views
 
 urlpatterns = [
 	path('NombreDireccion', views.NombreClase.as_view(), name="NombreURL"),
